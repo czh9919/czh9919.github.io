@@ -5,9 +5,9 @@
   <subtitle>Study Hard</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://doub039.cn/"/>
+  <link href="http://dbd039.cn/"/>
   <updated>2020-02-19T02:28:44.984Z</updated>
-  <id>http://doub039.cn/</id>
+  <id>http://dbd039.cn/</id>
   
   <author>
     <name>dbd039</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>VS code写C/C++</title>
-    <link href="http://doub039.cn/2019/03/07/VS-code%E5%86%99C++/"/>
-    <id>http://doub039.cn/2019/03/07/VS-code%E5%86%99C++/</id>
+    <link href="http://dbd039.cn/2019/03/07/VS-code%E5%86%99C++/"/>
+    <id>http://dbd039.cn/2019/03/07/VS-code%E5%86%99C++/</id>
     <published>2019-03-07T14:21:14.000Z</published>
     <updated>2020-02-19T02:28:44.984Z</updated>
     
@@ -36,14 +36,14 @@
     
     
     
-      <category term="安利" scheme="http://doub039.cn/tags/%E5%AE%89%E5%88%A9/"/>
+      <category term="安利" scheme="http://dbd039.cn/tags/%E5%AE%89%E5%88%A9/"/>
     
   </entry>
   
   <entry>
     <title>VS code 安装STM32教程</title>
-    <link href="http://doub039.cn/2019/01/15/VS-code-%E5%AE%89%E8%A3%85STM32%E6%95%99%E7%A8%8B/"/>
-    <id>http://doub039.cn/2019/01/15/VS-code-%E5%AE%89%E8%A3%85STM32%E6%95%99%E7%A8%8B/</id>
+    <link href="http://dbd039.cn/2019/01/15/VS-code-%E5%AE%89%E8%A3%85STM32%E6%95%99%E7%A8%8B/"/>
+    <id>http://dbd039.cn/2019/01/15/VS-code-%E5%AE%89%E8%A3%85STM32%E6%95%99%E7%A8%8B/</id>
     <published>2019-01-15T14:38:11.000Z</published>
     <updated>2020-02-19T02:28:44.984Z</updated>
     
@@ -60,14 +60,14 @@
     
     
     
-      <category term="电子设计大赛" scheme="http://doub039.cn/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/"/>
+      <category term="电子设计大赛" scheme="http://dbd039.cn/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title>STM32简单解读</title>
-    <link href="http://doub039.cn/2019/01/11/STM32%E7%AE%80%E5%8D%95%E8%A7%A3%E8%AF%BB/"/>
-    <id>http://doub039.cn/2019/01/11/STM32%E7%AE%80%E5%8D%95%E8%A7%A3%E8%AF%BB/</id>
+    <link href="http://dbd039.cn/2019/01/11/STM32%E7%AE%80%E5%8D%95%E8%A7%A3%E8%AF%BB/"/>
+    <id>http://dbd039.cn/2019/01/11/STM32%E7%AE%80%E5%8D%95%E8%A7%A3%E8%AF%BB/</id>
     <published>2019-01-11T15:26:27.000Z</published>
     <updated>2020-02-19T02:32:17.069Z</updated>
     
@@ -84,14 +84,14 @@
     
     
     
-      <category term="电子设计大赛" scheme="http://doub039.cn/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/"/>
+      <category term="电子设计大赛" scheme="http://dbd039.cn/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title>安装docker</title>
-    <link href="http://doub039.cn/2018/11/30/%E5%AE%89%E8%A3%85docker/"/>
-    <id>http://doub039.cn/2018/11/30/%E5%AE%89%E8%A3%85docker/</id>
+    <link href="http://dbd039.cn/2018/11/30/%E5%AE%89%E8%A3%85docker/"/>
+    <id>http://dbd039.cn/2018/11/30/%E5%AE%89%E8%A3%85docker/</id>
     <published>2018-11-29T21:14:23.000Z</published>
     <updated>2020-02-19T02:28:44.984Z</updated>
     
@@ -108,14 +108,14 @@
     
     
     
-      <category term="好玩的东西" scheme="http://doub039.cn/tags/%E5%A5%BD%E7%8E%A9%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
+      <category term="好玩的东西" scheme="http://dbd039.cn/tags/%E5%A5%BD%E7%8E%A9%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
   </entry>
   
   <entry>
     <title>Static Electric Fields</title>
-    <link href="http://doub039.cn/2018/11/11/Static-Electric-Fields/"/>
-    <id>http://doub039.cn/2018/11/11/Static-Electric-Fields/</id>
+    <link href="http://dbd039.cn/2018/11/11/Static-Electric-Fields/"/>
+    <id>http://dbd039.cn/2018/11/11/Static-Electric-Fields/</id>
     <published>2018-11-11T05:11:53.000Z</published>
     <updated>2020-02-19T02:32:17.068Z</updated>
     
@@ -132,14 +132,14 @@
     
     
     
-      <category term="Field and Wave Electronmagnertics" scheme="http://doub039.cn/tags/Field-and-Wave-Electronmagnertics/"/>
+      <category term="Field and Wave Electronmagnertics" scheme="http://dbd039.cn/tags/Field-and-Wave-Electronmagnertics/"/>
     
   </entry>
   
   <entry>
     <title>Operational Amplifiers</title>
-    <link href="http://doub039.cn/2018/10/22/Operational-Amplifiers/"/>
-    <id>http://doub039.cn/2018/10/22/Operational-Amplifiers/</id>
+    <link href="http://dbd039.cn/2018/10/22/Operational-Amplifiers/"/>
+    <id>http://dbd039.cn/2018/10/22/Operational-Amplifiers/</id>
     <published>2018-10-22T08:20:44.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -156,14 +156,14 @@
     
     
     
-      <category term="Circuit Theory" scheme="http://doub039.cn/tags/Circuit-Theory/"/>
+      <category term="Circuit Theory" scheme="http://dbd039.cn/tags/Circuit-Theory/"/>
     
   </entry>
   
   <entry>
     <title>KVL-KCL</title>
-    <link href="http://doub039.cn/2018/10/19/KVL-KCL/"/>
-    <id>http://doub039.cn/2018/10/19/KVL-KCL/</id>
+    <link href="http://dbd039.cn/2018/10/19/KVL-KCL/"/>
+    <id>http://dbd039.cn/2018/10/19/KVL-KCL/</id>
     <published>2018-10-19T11:50:17.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -180,14 +180,14 @@
     
     
     
-      <category term="Circuit Theory" scheme="http://doub039.cn/tags/Circuit-Theory/"/>
+      <category term="Circuit Theory" scheme="http://dbd039.cn/tags/Circuit-Theory/"/>
     
   </entry>
   
   <entry>
     <title>Git</title>
-    <link href="http://doub039.cn/2018/10/13/Git/"/>
-    <id>http://doub039.cn/2018/10/13/Git/</id>
+    <link href="http://dbd039.cn/2018/10/13/Git/"/>
+    <id>http://dbd039.cn/2018/10/13/Git/</id>
     <published>2018-10-13T11:31:17.000Z</published>
     <updated>2018-10-14T02:00:27.307Z</updated>
     
@@ -204,14 +204,14 @@
     
     
     
-      <category term="Git" scheme="http://doub039.cn/tags/Git/"/>
+      <category term="Git" scheme="http://dbd039.cn/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Sorting in Linear Time</title>
-    <link href="http://doub039.cn/2018/10/10/Sorting-in-Linear-Time/"/>
-    <id>http://doub039.cn/2018/10/10/Sorting-in-Linear-Time/</id>
+    <link href="http://dbd039.cn/2018/10/10/Sorting-in-Linear-Time/"/>
+    <id>http://dbd039.cn/2018/10/10/Sorting-in-Linear-Time/</id>
     <published>2018-10-10T11:01:43.000Z</published>
     <updated>2020-02-19T02:32:17.069Z</updated>
     
@@ -228,14 +228,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>Quick Sort</title>
-    <link href="http://doub039.cn/2018/10/08/Quick-Sort/"/>
-    <id>http://doub039.cn/2018/10/08/Quick-Sort/</id>
+    <link href="http://dbd039.cn/2018/10/08/Quick-Sort/"/>
+    <id>http://dbd039.cn/2018/10/08/Quick-Sort/</id>
     <published>2018-10-08T11:08:01.000Z</published>
     <updated>2020-02-19T02:32:17.068Z</updated>
     
@@ -252,14 +252,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>Basic Concepts</title>
-    <link href="http://doub039.cn/2018/10/08/Basic-Concepts/"/>
-    <id>http://doub039.cn/2018/10/08/Basic-Concepts/</id>
+    <link href="http://dbd039.cn/2018/10/08/Basic-Concepts/"/>
+    <id>http://dbd039.cn/2018/10/08/Basic-Concepts/</id>
     <published>2018-10-08T07:24:47.000Z</published>
     <updated>2020-02-19T04:37:35.537Z</updated>
     
@@ -276,14 +276,14 @@
     
     
     
-      <category term="Circuit Theory" scheme="http://doub039.cn/tags/Circuit-Theory/"/>
+      <category term="Circuit Theory" scheme="http://dbd039.cn/tags/Circuit-Theory/"/>
     
   </entry>
   
   <entry>
     <title>Heapsort</title>
-    <link href="http://doub039.cn/2018/09/26/Heapsort/"/>
-    <id>http://doub039.cn/2018/09/26/Heapsort/</id>
+    <link href="http://dbd039.cn/2018/09/26/Heapsort/"/>
+    <id>http://dbd039.cn/2018/09/26/Heapsort/</id>
     <published>2018-09-26T14:30:41.000Z</published>
     <updated>2020-02-19T02:32:17.069Z</updated>
     
@@ -300,14 +300,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>binary tree</title>
-    <link href="http://doub039.cn/2018/09/21/binary-tree/"/>
-    <id>http://doub039.cn/2018/09/21/binary-tree/</id>
+    <link href="http://dbd039.cn/2018/09/21/binary-tree/"/>
+    <id>http://dbd039.cn/2018/09/21/binary-tree/</id>
     <published>2018-09-21T15:02:28.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -324,14 +324,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>Divide and conquer</title>
-    <link href="http://doub039.cn/2018/09/09/Divide-and-conquer/"/>
-    <id>http://doub039.cn/2018/09/09/Divide-and-conquer/</id>
+    <link href="http://dbd039.cn/2018/09/09/Divide-and-conquer/"/>
+    <id>http://dbd039.cn/2018/09/09/Divide-and-conquer/</id>
     <published>2018-09-09T07:05:25.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -348,14 +348,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>Growth of Functions</title>
-    <link href="http://doub039.cn/2018/09/06/Growth-of-Functions/"/>
-    <id>http://doub039.cn/2018/09/06/Growth-of-Functions/</id>
+    <link href="http://dbd039.cn/2018/09/06/Growth-of-Functions/"/>
+    <id>http://dbd039.cn/2018/09/06/Growth-of-Functions/</id>
     <published>2018-09-06T07:41:55.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -372,14 +372,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>Get Started</title>
-    <link href="http://doub039.cn/2018/09/05/Get-Started/"/>
-    <id>http://doub039.cn/2018/09/05/Get-Started/</id>
+    <link href="http://dbd039.cn/2018/09/05/Get-Started/"/>
+    <id>http://dbd039.cn/2018/09/05/Get-Started/</id>
     <published>2018-09-05T02:14:49.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -396,14 +396,14 @@
     
     
     
-      <category term="Introduction to Algorithms" scheme="http://doub039.cn/tags/Introduction-to-Algorithms/"/>
+      <category term="Introduction to Algorithms" scheme="http://dbd039.cn/tags/Introduction-to-Algorithms/"/>
     
   </entry>
   
   <entry>
     <title>卷积神经网络</title>
-    <link href="http://doub039.cn/2018/09/04/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
-    <id>http://doub039.cn/2018/09/04/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
+    <link href="http://dbd039.cn/2018/09/04/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"/>
+    <id>http://dbd039.cn/2018/09/04/%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</id>
     <published>2018-09-04T13:00:55.000Z</published>
     <updated>2020-02-19T02:28:44.991Z</updated>
     
@@ -421,14 +421,14 @@
     
     
     
-      <category term="Machine Learning" scheme="http://doub039.cn/tags/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
     
   </entry>
   
   <entry>
     <title>与学习有关的技巧</title>
-    <link href="http://doub039.cn/2018/08/31/%E4%B8%8E%E5%AD%A6%E4%B9%A0%E6%9C%89%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7/"/>
-    <id>http://doub039.cn/2018/08/31/%E4%B8%8E%E5%AD%A6%E4%B9%A0%E6%9C%89%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7/</id>
+    <link href="http://dbd039.cn/2018/08/31/%E4%B8%8E%E5%AD%A6%E4%B9%A0%E6%9C%89%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7/"/>
+    <id>http://dbd039.cn/2018/08/31/%E4%B8%8E%E5%AD%A6%E4%B9%A0%E6%9C%89%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7/</id>
     <published>2018-08-31T13:25:06.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -445,14 +445,14 @@
     
     
     
-      <category term="Machine Learning" scheme="http://doub039.cn/tags/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
     
   </entry>
   
   <entry>
     <title>Affine/softmax层的实现</title>
-    <link href="http://doub039.cn/2018/08/29/Affine-softmax%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://doub039.cn/2018/08/29/Affine-softmax%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
+    <link href="http://dbd039.cn/2018/08/29/Affine-softmax%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://dbd039.cn/2018/08/29/Affine-softmax%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
     <published>2018-08-29T07:30:17.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -469,14 +469,14 @@
     
     
     
-      <category term="Machine Learning" scheme="http://doub039.cn/tags/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
     
   </entry>
   
   <entry>
     <title>误差反向传播法</title>
-    <link href="http://doub039.cn/2018/08/28/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/"/>
-    <id>http://doub039.cn/2018/08/28/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/</id>
+    <link href="http://dbd039.cn/2018/08/28/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/"/>
+    <id>http://dbd039.cn/2018/08/28/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/</id>
     <published>2018-08-28T09:11:08.000Z</published>
     <updated>2020-02-19T02:32:17.067Z</updated>
     
@@ -493,7 +493,7 @@
     
     
     
-      <category term="Machine Learning" scheme="http://doub039.cn/tags/Machine-Learning/"/>
+      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
     
   </entry>
   
