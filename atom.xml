@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dbd039.cn/"/>
-  <updated>2020-02-21T02:45:26.108Z</updated>
+  <updated>2020-02-24T02:11:34.600Z</updated>
   <id>http://dbd039.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次vscode插件的开发</title>
+    <link href="http://dbd039.cn/2020/02/02/%E8%AE%B0%E4%B8%80%E6%AC%A1vscode%E6%8F%92%E4%BB%B6%E7%9A%84%E5%BC%80%E5%8F%91/"/>
+    <id>http://dbd039.cn/2020/02/02/%E8%AE%B0%E4%B8%80%E6%AC%A1vscode%E6%8F%92%E4%BB%B6%E7%9A%84%E5%BC%80%E5%8F%91/</id>
+    <published>2020-02-02T01:25:00.000Z</published>
+    <updated>2020-02-24T02:11:34.600Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记一次vscode插件的开发"><a href="#记一次vscode插件的开发" class="headerlink" title="记一次vscode插件的开发"></a>记一次vscode插件的开发</h1><ol><li>本篇文章适用于想在未来开发或加入开发vscode插件的萌新</li><li>我自己也是新手，如有错漏，还请指出</li><li>本文只记载了一点思路，细节不是很清晰</li></ol><h2 id="本地环境的安装与配置"><a href="#本地环境的安装与配置" class="headerlink" title="本地环境的安装与配置"></a>本地环境的安装与配置</h2><p>最开始是node的安装，这取决于你的操作系统，官网或包管理器下载。<br>在终端中运行<em>node -v</em>。如果出现版本号即为成功。</p><p>另外，安装下git。<br>官网下载或包管理器下载。</p><h2 id="建立工程"><a href="#建立工程" class="headerlink" title="建立工程"></a>建立工程</h2><p>然后，运行如下命令：</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yo generator-code</span><br></pre></td></tr></tbody></table></figure><p>在安装过程中，如果出现问题，可能是网络问题，建议分开安装。<br>在安装成功后，在你打算建立工程的文件夹下，运行如下命令：</p><p>注意这其中的选项按你自己打算的或习惯的来。当然咯，更建议先自己跑一遍官网的Helloworld的代码。熟悉下流程。网址如<a href="https://code.visualstudio.com/api/get-startedyour-first-extension" target="_blank" rel="noopener">下</a></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">yo code</span><br><span class="line"></span><br><span class="line"><span class="comment"># ? What type of extension do you want to create? New Extension</span></span><br><span class="line"><span class="comment"># (这里我选的是new code snippet,原因是我正好要写一个，因为我发现Verilog的snippet都不太好用，万一火了呢)</span></span><br><span class="line"><span class="comment"># ? What's the name of your extension? HelloWorld</span></span><br><span class="line"><span class="comment">### 按你自己的打算来，我这里记载了一个snippets的制作 ###</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ? What's the identifier of your extension? 随你</span></span><br><span class="line"><span class="comment"># ? What's the description of your extension? 写自己的描述</span></span><br><span class="line"><span class="comment"># ? Initialize a git repository? Yes</span></span><br><span class="line"><span class="comment"># ? Which package manager to use? npm</span></span><br><span class="line"></span><br><span class="line">code ./你自己取的名字</span><br></pre></td></tr></tbody></table></figure><p>然后我们观察一下文件结构，大概是这样的。</p><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .vscode</span><br><span class="line">│   ├── launch.json     // Config for launching and debugging the extension</span><br><span class="line">│   └── tasks.json      // Config for build task that compiles TypeScript</span><br><span class="line">├── .gitignore          // Ignore build output and node_modules</span><br><span class="line">├── README.md           // Readable description of your extension's functionality</span><br><span class="line">├── src</span><br><span class="line">│   └── extension.ts    // Extension source code</span><br><span class="line">├── package.json        // Extension manifest</span><br><span class="line">├── tsconfig.json       // TypeScript configuration</span><br></pre></td></tr></tbody></table></figure><p>打开package.json,在contribute下加入你自己想加入的东西，所有的API都在<a href="https://code.visualstudio.com/api/references/vscode-api" target="_blank" rel="noopener">这</a>,这也是最重要的。比如你想在输入某个快捷键时触发某个事件，或者就简单的做个snippet，就可以如下所示</p><p>如：</p><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    <span class="string">"contributes"</span>: {</span><br><span class="line">        <span class="string">"snippets"</span>: [</span><br><span class="line">        {</span><br><span class="line">            <span class="string">"language"</span>: <span class="string">"verilog"</span>,</span><br><span class="line">            <span class="string">"path"</span>: <span class="string">"./snippets/verilog.json"</span></span><br><span class="line">        }</span><br><span class="line">    ]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><p>然后，在根目录下建立snippets文件夹。然后把你自己写的代码片段放入该目录下就像上面js里的path所示。</p><h2 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h2><p>到这里测试下就可以发布了，<a href="https://code.visualstudio.com/api/working-with-extensions/publishing-extension" target="_blank" rel="noopener">官网</a>提供了非常详细的教程，这里不再赘述</p><h2 id="题外话"><a href="#题外话" class="headerlink" title="题外话"></a>题外话</h2><p>写这个的原因是，我先发现Verilog的snippet比较少，然后我就把我自己写的snippet做了个插件。然后我一直想做一个自动化生成注释的插件，然后第一个就当练手了，然后下个学期有一门要写Verilog的课，应该会继续更新这个插件吧。<br>这个自动化生成注释插件的功能是比如你写一个函数，有时候还要给这个函数写描述，一些重复性的工作，这个插件的功能类似于autodocblocker插件的功能，但是作者已经将近一年没更新了，而且支持的语言并不多，我从来没写过js和TypeScript，我打算能写就写，不能写就算了，所以这篇文章就用来记载写vscode插件的思路。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;记一次vscode插件的开发&quot;&gt;&lt;a href=&quot;#记一次vscode插件的开发&quot; class=&quot;headerlink&quot; title=&quot;记一次vscode插件的开发&quot;&gt;&lt;/a&gt;记一次vscode插件的开发&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;本篇文章适用于想在未来开发或加入
+      
+    
+    </summary>
+    
+    
+      <category term="VScode" scheme="http://dbd039.cn/categories/VScode/"/>
+    
+    
+      <category term="安利" scheme="http://dbd039.cn/tags/%E5%AE%89%E5%88%A9/"/>
+    
+      <category term="vscode" scheme="http://dbd039.cn/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>VS code写C/C++</title>
@@ -463,30 +492,6 @@
       
       
         &lt;h1 id=&quot;Affine-Softmax层的实现&quot;&gt;&lt;a href=&quot;#Affine-Softmax层的实现&quot; class=&quot;headerlink&quot; title=&quot;Affine/Softmax层的实现&quot;&gt;&lt;/a&gt;Affine/Softmax层的实现&lt;/h1&gt;&lt;h2 id=&quot;A
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>误差反向传播法</title>
-    <link href="http://dbd039.cn/2018/08/28/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/"/>
-    <id>http://dbd039.cn/2018/08/28/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/</id>
-    <published>2018-08-28T09:11:08.000Z</published>
-    <updated>2020-02-19T02:32:17.067Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="误差反向传播法"><a href="#误差反向传播法" class="headerlink" title="误差反向传播法"></a>误差反向传播法</h1><p>个人认为有两种方法来正确理解误差反向传播法，一种是基于数学式，另一种是基于<strong>计算图</strong>这里我们以计算图来理解误差反向传播法</p><h2 id="计算图"><a href="#计算图" class="headerlink" title="计算图"></a>计算图</h2><p>计算图将计算过程用图形表示出来。<br>在计算图解题的过程中，需要如下流程进行</p><ol><li>构建计算图</li><li>在计算图上，从左至右进行计算(正向传播)</li></ol><p>这是Google上搜索到的对计算图的定义</p><blockquote><p>A computational graph is a directed graph where the nodes correspond to operations or variables. Variables can feed their value into operations, and operations can feed their output into other operations. This way, every node in the graph defines a function of the variables.</p></blockquote><p>更直观一些，拿一张图来说明<br><img src="/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/graph.png" alt="计算图"><br>有了计算图，我们可以通过正向传播和反向传播高效地计算各个变量的导数值</p><h3 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h3><p>个人认为这是一个非常让人感到困惑的概念，但通过他的原理<strong>链式法则</strong>,我们能比较清爽的了解反向传播的概念<br>这里我们引入一张图进行解释<br><img src="/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/graph2.png" alt="链式法则与计算图"><br>注意到这张图的正向传播是由下到上的，所以反向传播就是由上到下的<br>那么( \frac{ \partial e }{\partial a} =2) ( \frac{ \partial e }{\partial b} =5),对( \frac{ \partial e }{\partial a} =2)就是(e-c-a)路径偏导值的乘积，对( \frac{ \partial e }{\partial b} =5)就是路径(e-c-b)偏导值的乘积和(e-d-b)偏导值的乘积之和。还记得高数老师曾在讲链式法则的时候，画过图，就是计算图，所以反向传播的本质就是链式法则。</p><h3 id="简单层的实现"><a href="#简单层的实现" class="headerlink" title="简单层的实现"></a>简单层的实现</h3><p>接下来我将进行简单层的实现</p><h4 id="乘法层的实现"><a href="#乘法层的实现" class="headerlink" title="乘法层的实现"></a>乘法层的实现</h4><p>对层的实现，我们有两个共同的方法也可以叫接口，forward()和backward(),其中forward对应正向传播，backward对应反向传播。我们把乘法层命名为MulLayer类。</p><pre><code>class mulLayer:    def __init__(self):        self.x=None        self.y=None    def forward(self,x,y):        self.x=x        self.y=y        out=x*y        return out    def backward(self,dout):        dx=dout*self.y        dy=dout*self.x        return dx,dy</code></pre><p>代码见<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/MulLayer.py" target="_blank" rel="noopener">乘法层的实现</a></p><h4 id="加法层的实现"><a href="#加法层的实现" class="headerlink" title="加法层的实现"></a>加法层的实现</h4><p>加法层的实现相对简单<br>代码见<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/AddLayer.py" target="_blank" rel="noopener">加法层的实现</a></p><h3 id="激活函数层的实现"><a href="#激活函数层的实现" class="headerlink" title="激活函数层的实现"></a>激活函数层的实现</h3><h4 id="ReLu层"><a href="#ReLu层" class="headerlink" title="ReLu层"></a>ReLu层</h4><p>代码见<a href="https://github.com/czh9919/Study-notes/blob/master/common/layers.py" target="_blank" rel="noopener">ReLu</a>中的ReLu类</p><h4 id="sigmoid层"><a href="#sigmoid层" class="headerlink" title="sigmoid层"></a>sigmoid层</h4><p>代码见<a href="https://github.com/czh9919/Study-notes/blob/master/common/layers.py" target="_blank" rel="noopener">sigmoid</a>中的Sigmoid类</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;误差反向传播法&quot;&gt;&lt;a href=&quot;#误差反向传播法&quot; class=&quot;headerlink&quot; title=&quot;误差反向传播法&quot;&gt;&lt;/a&gt;误差反向传播法&lt;/h1&gt;&lt;p&gt;个人认为有两种方法来正确理解误差反向传播法，一种是基于数学式，另一种是基于&lt;strong&gt;计算图&lt;/
       
     
     </summary>
