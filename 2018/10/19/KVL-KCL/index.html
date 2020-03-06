@@ -390,7 +390,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    335
+                    387
                 </div>
                 
 
@@ -418,7 +418,25 @@
 <h2 id="基尔霍夫电压定律-KVL"><a href="#基尔霍夫电压定律-KVL" class="headerlink" title="基尔霍夫电压定律(KVL)"></a>基尔霍夫电压定律(KVL)</h2><p>基尔霍夫电压定律也是电路分析的基本定律之一。在闭合回路中，电能不会放大或缩小，所以在闭合回路中，所有元件的电压的代数和为零（怎么讲都好奇怪，这里最好看英文的）<br>(英文版本：His voltage law states that for a closed loop series path the algebraic sum of allthe voltages around any closed loop in a circuit is equal to zero.)<br>$$<br>\sum V=0<br>$$</p>
 <h2 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h2><p><img src="%5C2.PNG" alt="基尔霍夫电压定律"></p>
 <p>如图所示，有三个可以用来列方程的闭合回路,但有一个没啥用，所以只列两个，和那个特勒根定律一样，注意极性。<br>$$<br>V_{Ref 1}+V_{Ref 3}+V_{Ref 2}+V_{Ref 5}+V_{Ref 6}=0<br>$$<br>很简单的问题，不多说/</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -914,7 +932,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.4k</span>&nbsp;字
+                class="white-color">21.3k</span>&nbsp;字
             
             
             
@@ -979,6 +997,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备20002105号-1</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">

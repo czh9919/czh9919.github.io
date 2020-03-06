@@ -391,7 +391,7 @@ git commit 提交一个更改，git会把更改打包在新结点中，所以git
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    241
+                    293
                 </div>
                 
 
@@ -420,7 +420,25 @@ git commit 提交一个更改，git会把更改打包在新结点中，所以git
 <p>git rebase<br>有点懵<br>head指针通常指向最近一次更改<br>git checkout head^<br>表示移动到父位置<br>git branch -f master HEAD<del>3<br>上面的命令会将 master 分支强制指向 HEAD 的第 3 级父提交。<br>git reset HEAD</del>1 撤销更改<br>git revert HEAD是创建一个新提交，这个提交与原提交的父提交相同</p>
 <hr>
 <p>git cherry-pick c2 c4 Git 就将被c2 c4抓过来放到当前分支下了。 就是这么简单!<br>git rebase -i HEAD~4</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -907,7 +925,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.4k</span>&nbsp;字
+                class="white-color">21.3k</span>&nbsp;字
             
             
             
@@ -972,6 +990,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备20002105号-1</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">

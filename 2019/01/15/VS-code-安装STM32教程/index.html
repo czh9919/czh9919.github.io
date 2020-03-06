@@ -390,7 +390,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    667
+                    719
                 </div>
                 
 
@@ -431,7 +431,25 @@
 <p>然后，我们下载<a href="https://github.com/damogranlabs/VS-Code-STM32-IDE/tree/master/ideScripts" target="_blank" rel="noopener">这里的所有文件</a>,放入CUBEMx生成代码的目录，也就是VS code现在打开的目录，如图</p>
 <p><img src="13.PNG" alt="图"></p>
 <p>这是我的完成版<br>然后用python运行ideScripts的update.py<br>按如图所示填入<br><img src="15.PNG" alt="图"><br>然后，如图所示，即为成功<br><img src="16.PNG" alt="图"><br>这里有一个问题，需要注意，所有路径不要包含空格，不然无法构建。<br>然后，打开main.c,按Ctrl+P，输入&gt;Run，可见运行任务，然后build，测试即可。<br>至此，我们完成了基本构建，如果，还有别的需求，请自行查阅资料，或在评论区询问。</p>
-<pre><code>参考资料：https://github.com/damogranlabs/VS-Code-STM32-IDE</code></pre>
+<pre><code>参考资料：https://github.com/damogranlabs/VS-Code-STM32-IDE</code></pre><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -928,7 +946,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.4k</span>&nbsp;字
+                class="white-color">21.3k</span>&nbsp;字
             
             
             
@@ -993,6 +1011,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备20002105号-1</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">

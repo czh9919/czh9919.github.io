@@ -391,7 +391,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    663
+                    715
                 </div>
                 
 
@@ -443,7 +443,25 @@
 <p>解题如下,注意元件极性(polarity),<strong>如果电流流入元器件正极，那么代入公式时，电流为正，如果流入负极，那么在公式中，电流值为负</strong></p>
 <p>$$<br>\sum P=P_{2A}+P_1+P_2+P_3+P_{4V}+P_{DS}=6\times (-2)+6\times I_0+12\times (-9)+10\times (-3)+4\times (-8)+4\times (-8)=0<br>$$</p>
 <p>解得(I_0=1A)</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -937,7 +955,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.4k</span>&nbsp;字
+                class="white-color">21.3k</span>&nbsp;字
             
             
             
@@ -1002,6 +1020,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备20002105号-1</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">

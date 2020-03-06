@@ -391,7 +391,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    500
+                    552
                 </div>
                 
 
@@ -434,7 +434,25 @@
 <h2 id="误差反向传播法的实现"><a href="#误差反向传播法的实现" class="headerlink" title="误差反向传播法的实现"></a>误差反向传播法的实现</h2><p>在组装之前，先去复习下神经网络的全貌图，这里就不写了<br>这里我们将会在<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/TwoLayerNet.py" target="_blank" rel="noopener">原两层神经网络</a>上进行更改<br>具体代码如下<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/NewTwoLayerNet.py" target="_blank" rel="noopener">两层神经网络</a><br>注意OrderedDict，这是有序字典，顺序是向字典里添加元素的顺序。</p>
 <h2 id="误差反向传播法的梯度确认"><a href="#误差反向传播法的梯度确认" class="headerlink" title="误差反向传播法的梯度确认"></a>误差反向传播法的梯度确认</h2><p>确认数值微分求出的梯度呵误差反向传播法求出的结果是否一致的操作叫做梯度确认。<br>代码<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/gradient_check.py" target="_blank" rel="noopener">在这</a></p>
 <h2 id="使用误差反向传播法的学习"><a href="#使用误差反向传播法的学习" class="headerlink" title="使用误差反向传播法的学习"></a>使用误差反向传播法的学习</h2><p>直接展示<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/new_train_neuralnet.py" target="_blank" rel="noopener">代码</a><br>我这里的最后正确率达到了97.858333%</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -933,7 +951,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">20.4k</span>&nbsp;字
+                class="white-color">21.3k</span>&nbsp;字
             
             
             
@@ -998,6 +1016,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            
+            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                <a href="http://www.beian.miit.gov.cn" target="_blank">赣ICP备20002105号-1</a>
+            </span>
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
