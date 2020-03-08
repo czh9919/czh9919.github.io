@@ -387,7 +387,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-19
+                    2020-03-08
                 </div>
                 
 
@@ -427,8 +427,8 @@
 <blockquote>
 <p>A computational graph is a directed graph where the nodes correspond to operations or variables. Variables can feed their value into operations, and operations can feed their output into other operations. This way, every node in the graph defines a function of the variables.</p>
 </blockquote>
-<p>更直观一些，拿一张图来说明<br><img src="/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/graph.png" alt="计算图"><br>有了计算图，我们可以通过正向传播和反向传播高效地计算各个变量的导数值</p>
-<h3 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h3><p>个人认为这是一个非常让人感到困惑的概念，但通过他的原理<strong>链式法则</strong>,我们能比较清爽的了解反向传播的概念<br>这里我们引入一张图进行解释<br><img src="/%E8%AF%AF%E5%B7%AE%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E6%B3%95/graph2.png" alt="链式法则与计算图"><br>注意到这张图的正向传播是由下到上的，所以反向传播就是由上到下的<br>那么( \frac{ \partial e }{\partial a} =2) ( \frac{ \partial e }{\partial b} =5),对( \frac{ \partial e }{\partial a} =2)就是(e-c-a)路径偏导值的乘积，对( \frac{ \partial e }{\partial b} =5)就是路径(e-c-b)偏导值的乘积和(e-d-b)偏导值的乘积之和。还记得高数老师曾在讲链式法则的时候，画过图，就是计算图，所以反向传播的本质就是链式法则。</p>
+<p>更直观一些，拿一张图来说明<br><img src="https://i.loli.net/2020/03/08/Ts1Cg9MiPzQmXGc.png" alt="graph.png"><br>有了计算图，我们可以通过正向传播和反向传播高效地计算各个变量的导数值</p>
+<h3 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h3><p>个人认为这是一个非常让人感到困惑的概念，但通过他的原理<strong>链式法则</strong>,我们能比较清爽的了解反向传播的概念<br>这里我们引入一张图进行解释<br><img src="https://i.loli.net/2020/03/08/KjpT1vS5NMXtY7U.png" alt="graph2.png"><br>注意到这张图的正向传播是由下到上的，所以反向传播就是由上到下的<br>那么( \frac{ \partial e }{\partial a} =2) ( \frac{ \partial e }{\partial b} =5),对( \frac{ \partial e }{\partial a} =2)就是(e-c-a)路径偏导值的乘积，对( \frac{ \partial e }{\partial b} =5)就是路径(e-c-b)偏导值的乘积和(e-d-b)偏导值的乘积之和。还记得高数老师曾在讲链式法则的时候，画过图，就是计算图，所以反向传播的本质就是链式法则。</p>
 <h3 id="简单层的实现"><a href="#简单层的实现" class="headerlink" title="简单层的实现"></a>简单层的实现</h3><p>接下来我将进行简单层的实现</p>
 <h4 id="乘法层的实现"><a href="#乘法层的实现" class="headerlink" title="乘法层的实现"></a>乘法层的实现</h4><p>对层的实现，我们有两个共同的方法也可以叫接口，forward()和backward(),其中forward对应正向传播，backward对应反向传播。我们把乘法层命名为MulLayer类。</p>
 <pre><code>class mulLayer:
