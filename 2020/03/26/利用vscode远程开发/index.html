@@ -308,7 +308,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.3k
                 </div>
                 
 
@@ -361,6 +361,14 @@
 <h3 id="本文作废"><a href="#本文作废" class="headerlink" title="本文作废"></a>本文作废</h3><p>我本来写这个是为了教咋连kaist的Haedong lounge machine的。<br>结果发现那玩意儿没公网带宽……，无法完成初始化，写了这么多懒得作废，又舍不得删，就扔着吧。</p>
 <p>不过都写到这里了，我提一个解决思路，本人懒得测试，搞这个本来就是为了省事，又要折腾得不偿失。所以就放在这，找一个能连上公网的服务器，用上边的办法，连上，把根目录的/vscode-server(应该是这个名字)文件夹，装好插件以后，拷下来，用FTP传到无公网带宽的主机上，应该就行。</p>
 <p>如果这步不能成功，比如你找的主机能正常到空窗口能完成初始化，但由于防火墙啥的不能装完插件，比如说那个c/c++插件的依赖项,装不完，但插件也需要安装在远端呀，(基本是必须的,这句话存疑)。我们就可以用如下办法，插件基本都是开源的，下你server系统版本对应的插件的release包，解压，把extension目录下的拷贝，然后再回到你/vscode-server下找一个叫extension的文件夹，里面应该有你插件对应ID的文件夹，打开，把东西放进去，粘贴覆盖。</p>
+<p>我后来又想了想，写了这么多，不让别人看多不好。<br>就在后边附上如何利用一个linux远程主机的教程吧，假设有人不会的话。</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><p>我这里用的是putty，相信大家都用过了，不再赘述。</p>
+<h3 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h3><p>如果我们写完了代码，怎么上传到那个什么Haedong lounge machine那里勒。 </p>
+<p>我习惯用的是FileZilla，没有的话，下一个（客户端），双击打开。<br>左上角有个打开站点管理器，协议选择sFTP。</p>
+<p>站点填 eelab*.kaist.ac.kr</p>
+<p>登录类型正常（你自己正不正常随便你），用户名密码自己填。</p>
+<p>待连接以后，把文件拖到右边服务器文件夹就是了。</p>
+<p>接下来再打开putty或其他ssh软件，找到你的文件，运行你的代码。<br>这里可以逼逼叨叨的东西就更多了，懒得写了，就这样。</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse</a></p>
 <p><a href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="noopener">https://code.visualstudio.com/docs/languages/cpp</a></p>
 <p><a href="https://code.visualstudio.com/docs/remote/troubleshooting#_configuring-key-based-authentication" target="_blank" rel="noopener">https://code.visualstudio.com/docs/remote/troubleshooting#_configuring-key-based-authentication</a></p>
@@ -806,7 +814,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.3k</span>&nbsp;字
+                class="white-color">22.6k</span>&nbsp;字
             
             
             
