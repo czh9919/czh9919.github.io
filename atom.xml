@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dbd039.cn/"/>
-  <updated>2020-03-06T03:07:00.371Z</updated>
+  <updated>2020-03-26T12:43:17.653Z</updated>
   <id>http://dbd039.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用vscode远程开发</title>
+    <link href="http://dbd039.cn/2020/03/26/%E5%88%A9%E7%94%A8vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
+    <id>http://dbd039.cn/2020/03/26/%E5%88%A9%E7%94%A8vscode%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91/</id>
+    <published>2020-03-26T11:40:50.000Z</published>
+    <updated>2020-03-26T12:43:17.653Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="利用vscode远程开发"><a href="#利用vscode远程开发" class="headerlink" title="利用vscode远程开发"></a>利用vscode远程开发</h1><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="vscode及相关插件"><a href="#vscode及相关插件" class="headerlink" title="vscode及相关插件"></a>vscode及相关插件</h3><p>首先在本地为vscode安装一些插件，首先是必装的。</p><p><img src="https://i.loli.net/2020/03/26/DNR7JxiMCuavb8g.png" alt="2.PNG"></p><p>这个插件是一个插件包，可以用来在docker, WSL和通过ssh在远端进行开发。</p><p>剩下的是语言插件，这里我们用C/CPP举例，便安装一些C/CPP的插件，除了这个是必须的，其他的看具体需求看喜好。</p><p><img src="https://i.loli.net/2020/03/26/3TSUcdk2hjIWr6A.png" alt="1.PNG"></p><h3 id="安装受支持的ssh客户端"><a href="#安装受支持的ssh客户端" class="headerlink" title="安装受支持的ssh客户端"></a>安装受支持的ssh客户端</h3><p>这里提供两种方法安装,参考自<a href="https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse" target="_blank" rel="noopener">本文</a></p><h4 id="通过UI界面安装"><a href="#通过UI界面安装" class="headerlink" title="通过UI界面安装"></a>通过UI界面安装</h4><p>OpenSSH 客户端和服务器是 Windows 10 1809 的可安装功能，所以只要你的win10版本高于1809就能通过这个办法安装(PS：1809指18年9月发行的win版本)<br>如果要安装 OpenSSH，请启动“设置”，然后转到“应用”&gt;“应用和功能”&gt;“管理可选功能”。<br>扫描此列表，查看 OpenSSH 客户端是否已安装。 如果没有，则在页面顶部选择“添加功能”，然后：</p><ol><li>若要安装 OpenSSH 客户端，请找到“OpenSSH 客户端”，然后单击“安装”。</li><li>若要安装 OpenSSH 服务器，请找到“OpenSSH 服务器”，然后单击“安装”。</li></ol><p>安装完成后，请返回“应用”&gt;“应用和功能”&gt;“管理可选功能”，你应当会看到列出的 OpenSSH 组件。</p><h4 id="通过-PowerShell-安装-OpenSSH"><a href="#通过-PowerShell-安装-OpenSSH" class="headerlink" title="通过 PowerShell 安装 OpenSSH"></a>通过 PowerShell 安装 OpenSSH</h4><p>首先以管理员身份启动 PowerShell。<br>执行以下代码：</p><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-WindowsCapability</span> <span class="literal">-Online</span> | ? Name <span class="operator">-like</span> <span class="string">'OpenSSH*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出应该如下所示:</span></span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br><span class="line">Name  : OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br></pre></td></tr></tbody></table></figure><p>然后，安装服务器和客户端功能</p><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install the OpenSSH Client</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install the OpenSSH Server</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Both of these should return the following output:</span></span><br><span class="line"></span><br><span class="line">Path          :</span><br><span class="line">Online        : True</span><br><span class="line">RestartNeeded : False</span><br></pre></td></tr></tbody></table></figure><h2 id="连接远程主机"><a href="#连接远程主机" class="headerlink" title="连接远程主机"></a>连接远程主机</h2><h3 id="确认连接"><a href="#确认连接" class="headerlink" title="确认连接"></a>确认连接</h3><p>在我们用vscode连接远程主机之前，我们先用powershell或cmd确认连接是否正常。</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh yourID@eelab*.kaist.ac.kr</span><br></pre></td></tr></tbody></table></figure><p>如果能正常访问，那就进行下一步。</p><h3 id="在vscode中进行连接"><a href="#在vscode中进行连接" class="headerlink" title="在vscode中进行连接"></a>在vscode中进行连接</h3><p>在vscode中，从命令面板（F1）中选择Remote-SSH：Connect to Host， 然后输入</p><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh yourID@eelab*.kaist.ac.kr</span><br></pre></td></tr></tbody></table></figure><p>稍后，vscode将连接到SSH服务器并进行自我设置。vscode将使用进度通知使您保持最新状态，并且可以在Remote - SSH输出通道中看到详细的日志。</p><p>连接后，您将进入一个空窗口。您始终可以参考状态栏来查看连接到的主机。</p><h3 id="本文作废"><a href="#本文作废" class="headerlink" title="本文作废"></a>本文作废</h3><p>我本来写这个是为了教咋连kaist的Haedong lounge machine的。<br>结果发现那玩意儿没公网带宽……，无法完成初始化，写了这么多懒得作废，又舍不得删，就扔着吧。</p><p>不过都写到这里了，我提一个解决思路，本人懒得测试，搞这个本来就是为了省事，又要折腾得不偿失。所以就放在这，找一个能连上公网的服务器，用上边的办法，连上，把根目录的/vscode-server(应该是这个名字)文件夹，装好插件以后，拷下来，用FTP传到无公网带宽的主机上，应该就行。</p><p>如果这步不能成功，比如你找的主机能正常到空窗口能完成初始化，但由于防火墙啥的不能装完插件，比如说那个c/c++插件的依赖项,装不完，但插件也需要安装在远端呀，(基本是必须的,这句话存疑)。我们就可以用如下办法，插件基本都是开源的，下你server系统版本对应的插件的release包，解压，把extension目录下的拷贝，然后再回到你/vscode-server下找一个叫extension的文件夹，里面应该有你插件对应ID的文件夹，打开，把东西放进去，粘贴覆盖。</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse</a></p><p><a href="https://code.visualstudio.com/docs/languages/cpp" target="_blank" rel="noopener">https://code.visualstudio.com/docs/languages/cpp</a></p><p><a href="https://code.visualstudio.com/docs/remote/troubleshooting#_configuring-key-based-authentication" target="_blank" rel="noopener">https://code.visualstudio.com/docs/remote/troubleshooting#_configuring-key-based-authentication</a></p><p><a href="https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client" target="_blank" rel="noopener">https://code.visualstudio.com/docs/remote/troubleshooting#_installing-a-supported-ssh-client</a></p><p><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">https://code.visualstudio.com/docs/remote/ssh</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;利用vscode远程开发&quot;&gt;&lt;a href=&quot;#利用vscode远程开发&quot; class=&quot;headerlink&quot; title=&quot;利用vscode远程开发&quot;&gt;&lt;/a&gt;利用vscode远程开发&lt;/h1&gt;&lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; cla
+      
+    
+    </summary>
+    
+    
+      <category term="Markdown" scheme="http://dbd039.cn/categories/Markdown/"/>
+    
+    
+      <category term="安利" scheme="http://dbd039.cn/tags/%E5%AE%89%E5%88%A9/"/>
+    
+      <category term="vscode" scheme="http://dbd039.cn/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次vscode插件的开发</title>
@@ -468,30 +496,6 @@
       
       
         &lt;h1 id=&quot;与学习有关的技巧&quot;&gt;&lt;a href=&quot;#与学习有关的技巧&quot; class=&quot;headerlink&quot; title=&quot;与学习有关的技巧&quot;&gt;&lt;/a&gt;与学习有关的技巧&lt;/h1&gt;&lt;h2 id=&quot;参数的更新&quot;&gt;&lt;a href=&quot;#参数的更新&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Affine/softmax层的实现</title>
-    <link href="http://dbd039.cn/2018/08/29/Affine-softmax%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://dbd039.cn/2018/08/29/Affine-softmax%E5%B1%82%E7%9A%84%E5%AE%9E%E7%8E%B0/</id>
-    <published>2018-08-29T07:30:17.000Z</published>
-    <updated>2020-02-19T02:32:17.067Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Affine-Softmax层的实现"><a href="#Affine-Softmax层的实现" class="headerlink" title="Affine/Softmax层的实现"></a>Affine/Softmax层的实现</h1><h2 id="Affine层"><a href="#Affine层" class="headerlink" title="Affine层"></a>Affine层</h2><p>如图<br><img src="/Affine1.png" alt="Affine层的计算图"></p><p>现在来考虑该图的反向传播<br>$$<br>\frac {\partial f} {\partial X}=\frac{\partial L}{\partial Y}\cdot W^T<br>$$<br>和<br>$$<br>\frac{\partial L}{\partial W}=X^T\cdot \frac{\partial L}{\partial Y}<br>$$<br>其中(W^T)中的<strong>T</strong>表示转制。如下<br>$$<br>W=\begin{pmatrix} w_{11} &amp; w_{12}&amp;w_{13} \\ w_{12} &amp; w_{22}&amp;w_{23} \\ \end{pmatrix}<br>$$<br>那么转制为<br>$$<br>W^T=\begin{pmatrix} w_{11} &amp; w_{21}\\ w_{12} &amp; w_{22} \\ w_{13}&amp;w_{23} \\ \end{pmatrix}<br>$$</p><h2 id="批版本的Affine层"><a href="#批版本的Affine层" class="headerlink" title="批版本的Affine层"></a>批版本的Affine层</h2><p><img src="/Affine2.png" alt="批处理的Affine层的计算图"><br>代码如<a href="https://github.com/czh9919/Study-notes/blob/master/common/layers.py" target="_blank" rel="noopener">Affine</a>中的Affine类所示</p><h3 id="Softmax-with-Loss层"><a href="#Softmax-with-Loss层" class="headerlink" title="Softmax-with-Loss层"></a>Softmax-with-Loss层</h3><p>先引出softmax-with-Loss层的计算图,呃，没找到，pass，以后找到了补上<br>其实这个地方十分复杂，不展开说明<br>我们直接说明结论，推导将在后面的博文中进行解释<br>我们正向传播通过softmax层会得到正规化的值(不记得的去复习一下)<br>把1作为L，反向传播通过softamx层，我们会得到类似于( y_1-t_1)这样的结果，这样的话，输出的是当前神经网络的输出与教师标签的误差<br>代码实现如下</p><pre><code>class SoftmaxWithLoss:    def __init__(self):        self.loss=None        self.y=None        self.t=None    def forward(self,x,t):        self.t=t        self.y=softmax(x)        self.loss=cross_entropy_error(self.y,self.t)    def backward(self,dout=1):        batch_size=self.t.shape[0]        dx=(self.y-self.t)/batch_size        return dx</code></pre><p>也可见于<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/SoftmaxWithLoss.py" target="_blank" rel="noopener">Softmax with Loss</a></p><h2 id="误差反向传播法的实现"><a href="#误差反向传播法的实现" class="headerlink" title="误差反向传播法的实现"></a>误差反向传播法的实现</h2><p>在组装之前，先去复习下神经网络的全貌图，这里就不写了<br>这里我们将会在<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/TwoLayerNet.py" target="_blank" rel="noopener">原两层神经网络</a>上进行更改<br>具体代码如下<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/NewTwoLayerNet.py" target="_blank" rel="noopener">两层神经网络</a><br>注意OrderedDict，这是有序字典，顺序是向字典里添加元素的顺序。</p><h2 id="误差反向传播法的梯度确认"><a href="#误差反向传播法的梯度确认" class="headerlink" title="误差反向传播法的梯度确认"></a>误差反向传播法的梯度确认</h2><p>确认数值微分求出的梯度呵误差反向传播法求出的结果是否一致的操作叫做梯度确认。<br>代码<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/gradient_check.py" target="_blank" rel="noopener">在这</a></p><h2 id="使用误差反向传播法的学习"><a href="#使用误差反向传播法的学习" class="headerlink" title="使用误差反向传播法的学习"></a>使用误差反向传播法的学习</h2><p>直接展示<a href="https://github.com/czh9919/Study-notes/blob/master/Deep_Learning/new_train_neuralnet.py" target="_blank" rel="noopener">代码</a><br>我这里的最后正确率达到了97.858333%</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Affine-Softmax层的实现&quot;&gt;&lt;a href=&quot;#Affine-Softmax层的实现&quot; class=&quot;headerlink&quot; title=&quot;Affine/Softmax层的实现&quot;&gt;&lt;/a&gt;Affine/Softmax层的实现&lt;/h1&gt;&lt;h2 id=&quot;A
       
     
     </summary>
