@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dbd039.cn/"/>
-  <updated>2020-03-26T13:18:48.608Z</updated>
+  <updated>2020-07-13T02:58:17.086Z</updated>
   <id>http://dbd039.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>可靠性传输协议</title>
+    <link href="http://dbd039.cn/2020/07/07/%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://dbd039.cn/2020/07/07/%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/</id>
+    <published>2020-07-07T02:45:05.000Z</published>
+    <updated>2020-07-13T02:58:17.086Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="可靠性传输协议-sTCP"><a href="#可靠性传输协议-sTCP" class="headerlink" title="可靠性传输协议(sTCP)"></a>可靠性传输协议(sTCP)</h1><p>鸽了好久……</p><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><pre><code>code: https://github.com/czh9919/EE323/tree/master/lab4</code></pre><p>我在这里实现的是一个简易版的TCP（下文以sTCP代称），只实现三次握手，四次握手，滑动窗口，慢启动。<br>对于超时，重传，考虑到篇幅和我水平所限，只有大概思路，且该思路尚不完善（由于无代码形成）。</p><p>sTCP模仿的是传统TCP，可根据<a href="https://tools.ietf.org/html/rfc793" target="_blank" rel="noopener">RFC793</a>来查找整个TCP行为。</p><p><img src="https://i.loli.net/2020/07/07/8Vs7vYhWoQ3J6EC.png" alt="TCP.PNG"></p><p>该图展示了整个TCP的状态图。<br>从三次握手到四次挥手，整个过程是什么样的。</p><pre><code>void transport_init(mysocket_t sd, bool_t is_active){}</code></pre><p>该函数就展示了三次握手的过程</p><pre><code>static void control_loop(mysocket_t sd, context_t *ctx){}</code></pre><p>而该函数展示了整个连接过程中如何互传信息</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;可靠性传输协议-sTCP&quot;&gt;&lt;a href=&quot;#可靠性传输协议-sTCP&quot; class=&quot;headerlink&quot; title=&quot;可靠性传输协议(sTCP)&quot;&gt;&lt;/a&gt;可靠性传输协议(sTCP)&lt;/h1&gt;&lt;p&gt;鸽了好久……&lt;/p&gt;
+&lt;h2 id=&quot;introduct
+      
+    
+    </summary>
+    
+    
+    
+      <category term="计算机网络" scheme="http://dbd039.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>利用vscode远程开发</title>
@@ -472,30 +497,6 @@
       
         &lt;h1 id=&quot;卷积神经网络&quot;&gt;&lt;a href=&quot;#卷积神经网络&quot; class=&quot;headerlink&quot; title=&quot;卷积神经网络&quot;&gt;&lt;/a&gt;卷积神经网络&lt;/h1&gt;&lt;p&gt;这就是大名鼎鼎的CNN&lt;/p&gt;
 &lt;h2 id=&quot;整体结构&quot;&gt;&lt;a href=&quot;#整体结构&quot; class=&quot;h
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Machine Learning" scheme="http://dbd039.cn/tags/Machine-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>与学习有关的技巧</title>
-    <link href="http://dbd039.cn/2018/08/31/%E4%B8%8E%E5%AD%A6%E4%B9%A0%E6%9C%89%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7/"/>
-    <id>http://dbd039.cn/2018/08/31/%E4%B8%8E%E5%AD%A6%E4%B9%A0%E6%9C%89%E5%85%B3%E7%9A%84%E6%8A%80%E5%B7%A7/</id>
-    <published>2018-08-31T13:25:06.000Z</published>
-    <updated>2020-02-19T02:32:17.067Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="与学习有关的技巧"><a href="#与学习有关的技巧" class="headerlink" title="与学习有关的技巧"></a>与学习有关的技巧</h1><h2 id="参数的更新"><a href="#参数的更新" class="headerlink" title="参数的更新"></a>参数的更新</h2><p>在之前，我们一直使用随机梯度下降法(SGD),来更新参数，不过SGD有一定的缺点，他非常低效，搁我们这说就是磨叽，所以，我们引入一个新的方法，叫Monmentum</p><h3 id="SGD"><a href="#SGD" class="headerlink" title="SGD"></a>SGD</h3><p>我们先看下SGD的表达式，方便在此基础上拓展<br>$$<br>W\leftarrow W - \eta\frac{\partial L}{\partial W}<br>$$</p><h3 id="Monmentum"><a href="#Monmentum" class="headerlink" title="Monmentum"></a>Monmentum</h3><p>$$<br>v\leftarrow \alpha v - \eta\frac{\partial L}{\partial W}<br>$$</p><p>$$<br>W\leftarrow W+v<br>$$<br>和之前的SGD基本类似。<br>我们在代码中新建一个类，这样更方便，<br>代码见于<a href="https://github.com/czh9919/Study-notes/blob/master/common/optimizer.py" target="_blank" rel="noopener">此</a></p><h3 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h3><p>$$<br>h\leftarrow h+\frac{\partial L}{\partial W}\bigodot\frac{\partial L}{\partial W}<br>$$</p><p>$$<br>W\leftarrow W-\eta\frac{1}{\sqrt{h}}\frac{\partial L}{\partial W}<br>$$</p><p>这是我认为稍微难一点的算法，做一些讲解，和SGD类似，(W)表示要更新的权重参数，(\frac{\partial L}{\partial W})表示损失函数关于(W)的梯度,(\eta)表示学习率。(h)则用来存储以前所有梯度值的平方和(其中( \bigodot)表示对应矩阵元素的乘法)，这样每次更新参数，就能调节学习的尺度。<br>我打算看完这本书之后，看看哪本书能讲清楚原因的，这里看的知其然不知其所以然<br>AdaGrad见于<a href="https://github.com/czh9919/Study-notes/blob/master/common/optimizer.py" target="_blank" rel="noopener">AdaGrad</a></p><h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p>Adam是一种把AdaGrad和Momentum融合起来的做法，这里不说明了</p><h2 id="权重的初始值"><a href="#权重的初始值" class="headerlink" title="权重的初始值"></a>权重的初始值</h2><p>权重的初始值一般不设为0，甚至不能相同，为了防止“权重均一化”</p><h3 id="隐藏层的激活层的分布"><a href="#隐藏层的激活层的分布" class="headerlink" title="隐藏层的激活层的分布"></a>隐藏层的激活层的分布</h3><p>如果采用随机值作为初始值的话，就容易产生<strong>梯度消失</strong>或<strong>表现力受限</strong>的问题，这里，我们采用<strong>Xavier初始值</strong><br>在Xavier的论文中，为了使各层的激活值呈现出相同的广度，推导了合适的权重尺度。结论为，如果前一层的节点数为(n)，则初始值使用标准差为(\frac{1}{\sqrt{n}})\<br>假设所有层的节点数都是100代码为</p><pre><code>node_num=100W=np.random.randn(node_num,node_num)/np.sqrt(node_num)</code></pre><h3 id="ReLu的权重初始值"><a href="#ReLu的权重初始值" class="headerlink" title="ReLu的权重初始值"></a>ReLu的权重初始值</h3><p>Xavier函数是以线性函数为前提推导出来的，因为sigmoid函数和tehn函数左右对称，且中央附近可以视作线性函数，可以使用Xavier初始值，而对于ReLu函数，则建议使用<strong>He初始值</strong>。He初始值就是使用标准差为( \frac{2}{\sqrt{n}})的高斯分布</p><h2 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h2><h3 id="Batch-Normalization-的算法"><a href="#Batch-Normalization-的算法" class="headerlink" title="Batch Normalization 的算法"></a>Batch Normalization 的算法</h3><p>Batch Normalization有以下好处</p><ul><li>可以加快学习</li><li>不是很依赖初始值</li><li>抑制过拟合</li></ul><p>那么什么是Batch Normalization呢？</p><p>$$<br>\mu\leftarrow\frac{1}{m}\sum^m_{i=1}x_i<br>$$</p><p>$$<br>\sigma_B^2\leftarrow\frac{1}{m}\sum^m_{i=1}(x_i-\mu_B)^2<br>$$</p><p>$$<br>\hat x_i \leftarrow \frac{x_i-\mu_B}{\sqrt{\sigma_B^2-\varepsilon}}<br>$$</p><p>$$<br>y_i\leftarrow \gamma\hat x_i+\beta<br>$$<br>一开始(\gamma)=1,(\beta)=0,然后再通过学习调整到合适的值</p><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h3 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h3><p>主要有俩发生过拟合的原因</p><ul><li>模型拥有大量参数，表现力强</li><li>训练数据少</li></ul><h3 id="权值衰减"><a href="#权值衰减" class="headerlink" title="权值衰减"></a>权值衰减</h3><p>权值衰减一般可以用来抑制过拟化,这里不细讲</p><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><p>Dropout更简单，就是随机删除隐藏层神经元</p><h2 id="超参数的验证"><a href="#超参数的验证" class="headerlink" title="超参数的验证"></a>超参数的验证</h2><p>略</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;与学习有关的技巧&quot;&gt;&lt;a href=&quot;#与学习有关的技巧&quot; class=&quot;headerlink&quot; title=&quot;与学习有关的技巧&quot;&gt;&lt;/a&gt;与学习有关的技巧&lt;/h1&gt;&lt;h2 id=&quot;参数的更新&quot;&gt;&lt;a href=&quot;#参数的更新&quot; class=&quot;headerlink
       
     
     </summary>
