@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Matlab 101</title>
+      <link href="/2021/03/28/Matlab%E4%BF%AE%E7%82%BC%E6%89%8B%E5%86%8C-101/"/>
+      <url>/2021/03/28/Matlab%E4%BF%AE%E7%82%BC%E6%89%8B%E5%86%8C-101/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Matlab-101"><a href="#Matlab-101" class="headerlink" title="Matlab 101"></a>Matlab 101</h1><p>Matlab是什么 为什么使用Matlab</p><pre><code>MATLAB is a proprietary multi-paradigm programming language and numeric computing environment developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages. from Wikipedia</code></pre><h2 id="怎么获得Matlab"><a href="#怎么获得Matlab" class="headerlink" title="怎么获得Matlab"></a>怎么获得Matlab</h2><p>正版的Matlab可以通过官网购买，或者有学校购买，或者试用。</p><p>我使用的Matlab版本 R2020b</p><h2 id="toolbox介绍"><a href="#toolbox介绍" class="headerlink" title="toolbox介绍"></a>toolbox介绍</h2><p>比如<br>Simulink<br>Parallel Computing Toolbox<br>我们一般怎么选择我们的工具箱。<br><a href="https://www.mathworks.com/products.html?s_tid=gn_ps" target="_blank" rel="noopener">这个网址</a>有工具箱目录，我们拿<a href="https://www.mathworks.com/products/parallel-computing.html" target="_blank" rel="noopener">Parallel Computing Toolbox</a>,我一般用这个算大规模矩阵，比如 $10000\times 10000$这样的矩阵。<br><a href="https://www.mathworks.com/products/parallel-computing.html" target="_blank" rel="noopener">Parallel Computing Toolbox</a>这个网站上有关于这个工具箱的介绍和相关文档，我们注意到我们可以利用这个工具箱进行GPU或CPU并行计算，如果有深度学习需要的人强烈建议使用这个工具箱。</p><h2 id="文档介绍"><a href="#文档介绍" class="headerlink" title="文档介绍"></a>文档介绍</h2><p>拿上面的<a href="https://www.mathworks.com/products/parallel-computing.html" target="_blank" rel="noopener">Parallel Computing Toolbox</a>打个比方，他的文档就可以通过上面的网址进入，<a href="https://www.mathworks.com/help/parallel-computing/" target="_blank" rel="noopener">这个文档</a>里面就记录了这个工具箱提供了什么函数，什么API，他的文档十分全面</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MATLAB </tag>
+            
+            <tag> YOLO </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>可靠性传输协议</title>
       <link href="/2020/07/07/%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/"/>
       <url>/2020/07/07/%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE/</url>
