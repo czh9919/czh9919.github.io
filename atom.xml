@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dbd039.cn/"/>
-  <updated>2021-03-31T10:09:19.058Z</updated>
+  <updated>2021-03-31T11:08:58.071Z</updated>
   <id>http://dbd039.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://dbd039.cn/2021/03/29/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-101/"/>
     <id>http://dbd039.cn/2021/03/29/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-101/</id>
     <published>2021-03-29T11:10:04.000Z</published>
-    <updated>2021-03-31T10:09:19.058Z</updated>
+    <updated>2021-03-31T11:08:58.071Z</updated>
     
     <content type="html"><![CDATA[<h1 id="leetcode-刷题笔记"><a href="#leetcode-刷题笔记" class="headerlink" title="leetcode 刷题笔记"></a>leetcode 刷题笔记</h1><h2 id="90不同的二叉搜索树二"><a href="#90不同的二叉搜索树二" class="headerlink" title="90不同的二叉搜索树二"></a>90不同的二叉搜索树二</h2><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p><p>回溯法，回溯法得做啊。<br>回溯法太菜了。</p><pre><code>class Solution {public:    vector&lt;TreeNode*&gt; generateTrees(int start, int end) {        if (start &gt; end) {            return { nullptr };        }        vector&lt;TreeNode*&gt; allTrees;        // 枚举可行根节点        for (int i = start; i &lt;= end; i++) {            // 获得所有可行的左子树集合            vector&lt;TreeNode*&gt; leftTrees = generateTrees(start,    i - 1);            // 获得所有可行的右子树集合            vector&lt;TreeNode*&gt; rightTrees = generateTrees(i + 1,     end);            // 从左子树集合中选出一棵左子树，从右子树集合中选出一棵右子   树，拼接到根节点上            for (auto&amp; left : leftTrees) {                for (auto&amp; right : rightTrees) {                    TreeNode* currTree = new TreeNode(i);                    currTree-&gt;left = left;                    currTree-&gt;right = right;                    allTrees.emplace_back(currTree);                }            }        }        return allTrees;    }    vector&lt;TreeNode*&gt; generateTrees(int n) {        if (!n) {            return {};        }        return generateTrees(1, n);    }};作者：LeetCode-Solution链接：https://leetcode-cn.com/problems/   unique-binary-search-trees-ii/solution/   bu-tong-de-er-cha-sou-suo-shu-ii-by-leetcode-solut/来源：力扣（LeetCode）著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre><p>以上是力扣（LeetCode）给出的官方解法。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
