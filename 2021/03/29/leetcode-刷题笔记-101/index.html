@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Sorting in Linear Time, dbd039的博客">
-    <meta name="description" content="Sorting in Linear TimeLower bounds for sortingThe decision-tree model作为一个未来的工程师，我们应当考虑具体情况，我们在分析算法有多快的时候，应当注意计算模型，我们应当定义">
+    <meta name="keywords" content="leetcode 刷题笔记 101, dbd039的博客">
+    <meta name="description" content="Leetcode 101 section 00 死懒死懒的人终于要开始刷题了">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Sorting in Linear Time | dbd039的博客</title>
+    <title>leetcode 刷题笔记 101 | dbd039的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -238,12 +238,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Sorting in Linear Time</h1>
+                    <h1 class="description center-align post-title">leetcode 刷题笔记 101</h1>
                 </div>
             </div>
         </div>
@@ -360,8 +360,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Introduction-to-Algorithms/">
-                                <span class="chip bg-color">Introduction to Algorithms</span>
+                            <a href="/tags/leetcode-Markdown/">
+                                <span class="chip bg-color">-leetcode --Markdown</span>
                             </a>
                         
                     </div>
@@ -376,28 +376,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-10-10
+                    2021-03-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-02-19
+                    2021-03-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    343
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
 
@@ -413,29 +413,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Sorting-in-Linear-Time"><a href="#Sorting-in-Linear-Time" class="headerlink" title="Sorting in Linear Time"></a>Sorting in Linear Time</h1><h2 id="Lower-bounds-for-sorting"><a href="#Lower-bounds-for-sorting" class="headerlink" title="Lower bounds for sorting"></a>Lower bounds for sorting</h2><h3 id="The-decision-tree-model"><a href="#The-decision-tree-model" class="headerlink" title="The decision-tree model"></a>The decision-tree model</h3><p>作为一个未来的工程师，我们应当考虑具体情况，我们在分析算法有多快的时候，应当注意计算模型，我们应当定义在这个情况下计算机能做什么才能把数字排好序，比如，<strong>我们只能通过比较元素的大小来判断元素的大小关系</strong>。于是，我们引出决策树模型，一个决策树模型是一个完全二叉树，如图所示。<br>As a enigineer, we should care about the occasion, so this time, if we analysics the problem that how fast the algorithm can be fast, we should pay attention to computional model. we should define the thing that is allowed to do in this computional model in this occasion to find the correct order. That is <strong>we only can compare pair of elements to determine the relative order of elements</strong><br>A decision-tree model can be seen as a complete binary tree. As the picture shown.<br><img src="%5C%E5%86%B3%E7%AD%96%E6%A0%91.PNG" alt="decision-tree model"><br>首先，我们比较第一个和第二个元素，如果第一个元素大于第二个，我们走右侧道路，如果第一个元素小于或等于第二个元素，我们走左侧。 之后我们再对比其他元素。每当我们到达决策树模型的结点，这就意味这算法已经确定了一部分排好序的序列，当我们到达树的底部，这就意味着数组已经排好序了。这就是决策树模型做的事。<br>如果我们使用决策树模型分析算法。但这不是一个方便的方法。 我们可以用决策树模型证明排序算法不会快于(n\lg n)，我就不在这里写证明了，这太麻烦了。<br>但我们给出定理如下<br><strong>在最坏情况下，任何比较排序算法都需要做(\Omega (n\lg n))次比较。</strong></p>
-<p>这个定理只是在我们上边加粗字的基础上的。<br>First, we compare the first element and the second element, if the first one is bigger than the seond one, we select the right way,if the first one is smaller or equal to the second one, we select the left way. Then we compare the others. When we get a node of the decision-tree model, that means the sort algorithm have determined a sequence.When the get the the bottom of the tree, that means the sequence is sorted.And this is the thing we do in decision-tree model.<br>And we can use decision-tree to analysics the sort algorithm. But this is not a convenient way. We can use this decision-tree model to proof that all sort algorithm can’t be faster than (n\lg n), I don’t want to write the proof in the article, it is troublesome.<br>But we give a theorem.<br><strong>Any comparison sort algorithm requires(\Omega (n\lg n)) comparisons in the worst case.</strong><br>Remember all this theorem is based on the definition of we only can compare pair of elements to determine the relative order of elements.</p>
-<h2 id="Counting-sort"><a href="#Counting-sort" class="headerlink" title="Counting sort"></a>Counting sort</h2><p>伪代码：<br>pseudocode:</p>
-<pre><code>COUNTING-SORT(A,B,k)
-    let C[0...k]be a new array
-    for i=0 to k
-        C[i]=0
-    for j=1 to A.length
-        C[A[j]]=C[A[j]]+1
-    for i=1 to k
-        C[i]=C[i]+C[i+1]
-    for j=A.length downto 1
-        B[C[A[j]]]=A[j]
-        C[A[j]]=C[A[j]]-1</code></pre><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CountingSort</span><span class="params">(A, B, k)</span>:</span></span><br><span class="line">    C = list()</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k + <span class="number">1</span>):</span><br><span class="line">        C.append(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A)):</span><br><span class="line">        C[A[j]] = C[A[j]] + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k + <span class="number">1</span>):</span><br><span class="line">        C[i] = C[i] + C[i - <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A)):</span><br><span class="line">        B[C[A[j]] - <span class="number">2</span>] = A[j]</span><br><span class="line">        C[A[j]] = C[A[j]] - <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">65</span>, <span class="number">4</span>]</span><br><span class="line">B = list()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">7</span>):</span><br><span class="line">    B.append(<span class="number">0</span>)</span><br><span class="line">CountingSort(A,B,<span class="number">65</span>)</span><br></pre></td></tr></tbody></table></figure>
+                <h1 id="leetcode-刷题笔记"><a href="#leetcode-刷题笔记" class="headerlink" title="leetcode 刷题笔记"></a>leetcode 刷题笔记</h1><h2 id="90不同的二叉搜索树二"><a href="#90不同的二叉搜索树二" class="headerlink" title="90不同的二叉搜索树二"></a>90不同的二叉搜索树二</h2><p>给定一个整数 n，生成所有由 1 … n 为节点所组成的 二叉搜索树 。</p>
+<p>回溯法，回溯法得做啊。<br>回溯法太菜了。</p>
+<pre><code>class Solution {
+public:
+    vector&lt;TreeNode*&gt; generateTrees(int start, int end) {
+        if (start &gt; end) {
+            return { nullptr };
+        }
+        vector&lt;TreeNode*&gt; allTrees;
+        // 枚举可行根节点
+        for (int i = start; i &lt;= end; i++) {
+            // 获得所有可行的左子树集合
+            vector&lt;TreeNode*&gt; leftTrees = generateTrees(start,    i - 1);
 
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">CountintSort</span><span class="params">(<span class="keyword">int</span> A[],<span class="keyword">int</span> B[],<span class="keyword">int</span> k,<span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> *C = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(k * (<span class="keyword">sizeof</span>(<span class="keyword">int</span>)));</span><br><span class="line">    <span class="built_in">memset</span>(C, <span class="number">0</span>, k);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k+<span class="number">1</span>;i++)</span><br><span class="line">    {</span><br><span class="line">        C[i] = <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; len;j++)</span><br><span class="line">    {</span><br><span class="line">        C[A[j]] = C[A[j]] + <span class="number">1</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; k + <span class="number">1</span>;i++)</span><br><span class="line">    {</span><br><span class="line">        C[i] = C[i] + C[i - <span class="number">1</span>];</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;len;j++)</span><br><span class="line">    {</span><br><span class="line">        B[C[A[j]]<span class="number">-1</span>]=A[j];</span><br><span class="line">        C[A[j]]--;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> B;</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">int</span> A[<span class="number">7</span>] = {<span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">65</span>, <span class="number">4</span>};</span><br><span class="line">    <span class="keyword">int</span> B[<span class="number">7</span>] = {<span class="number">0</span>};</span><br><span class="line">    CountintSort(A, B, <span class="number">65</span>, <span class="number">7</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+            // 获得所有可行的右子树集合
+            vector&lt;TreeNode*&gt; rightTrees = generateTrees(i + 1,     end);
 
-<p>正如你所见，时间复杂度为(\Theta (n))<br>As you can see, the time complexity of these code is  (\Theta (n)), we are luckily.</p>
-<h2 id="radix-sort"><a href="#radix-sort" class="headerlink" title="radix sort"></a>radix sort</h2><p>我们每次从最低有效位开始排序，即从个位，十位这样。<br>We sort from the least significant digit of the number, just like we have a lot of numbers(893,567,798),we first sort 3,7,8,then 9,6,8, last,8,5,7.</p>
-<p>伪代码：<br>pseudocode:</p>
-<pre><code>RADIX-SORT(A,d)
-    for i=1 to d
-        use a stable sort to sort array A to digit i</code></pre><script>
+            // 从左子树集合中选出一棵左子树，从右子树集合中选出一棵右子   树，拼接到根节点上
+            for (auto&amp; left : leftTrees) {
+                for (auto&amp; right : rightTrees) {
+                    TreeNode* currTree = new TreeNode(i);
+                    currTree-&gt;left = left;
+                    currTree-&gt;right = right;
+                    allTrees.emplace_back(currTree);
+                }
+            }
+        }
+        return allTrees;
+    }
+
+    vector&lt;TreeNode*&gt; generateTrees(int n) {
+        if (!n) {
+            return {};
+        }
+        return generateTrees(1, n);
+    }
+};
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/   unique-binary-search-trees-ii/solution/   bu-tong-de-er-cha-sou-suo-shu-ii-by-leetcode-solut/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</code></pre><p>以上是力扣（LeetCode）给出的官方解法。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -478,7 +498,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://dbd039.cn/2018/10/10/Sorting-in-Linear-Time/">http://dbd039.cn/2018/10/10/Sorting-in-Linear-Time/</a>
+                    <a href="http://dbd039.cn/2021/03/29/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-101/">http://dbd039.cn/2021/03/29/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-101/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -516,8 +536,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Introduction-to-Algorithms/">
-                                    <span class="chip bg-color">Introduction to Algorithms</span>
+                                <a href="/tags/leetcode-Markdown/">
+                                    <span class="chip bg-color">-leetcode --Markdown</span>
                                 </a>
                             
                         </div>
@@ -683,30 +703,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/10/13/Git/">
+                <a href="/2021/03/29/leetcode-%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0-101/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Git">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="leetcode 刷题笔记 101">
                         
-                        <span class="card-title">Git</span>
+                        <span class="card-title">leetcode 刷题笔记 101</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git 备忘从这个牛逼的网站学的，自己可以去试试。
-git commit 提交一个更改，git会把更改打包在新结点中，所以git是个树结构git branch新建一个分支。git checkout &lt; new branch&gt; 告
+                            Leetcode 101 section 00 死懒死懒的人终于要开始刷题了
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2018-10-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -715,11 +735,12 @@ git commit 提交一个更改，git会把更改打包在新结点中，所以git
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Git/">
-                        <span class="chip bg-color">Git</span>
+                    <a href="/tags/leetcode-Markdown/">
+                        <span class="chip bg-color">-leetcode --Markdown</span>
                     </a>
                     
                 </div>
@@ -733,24 +754,24 @@ git commit 提交一个更改，git会把更改打包在新结点中，所以git
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/10/08/Quick-Sort/">
+                <a href="/2021/03/28/Matlab%E4%BF%AE%E7%82%BC%E6%89%8B%E5%86%8C-101/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Quick Sort">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Matlab 101">
                         
-                        <span class="card-title">Quick Sort</span>
+                        <span class="card-title">Matlab 101</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Quick sortDescription这是一个分治法，我不会花太长时间在快排上。这是书上的伪代码。It is a divide and conquer algorithm. I won’t spend a lot of time des
+                            MATLAB 101
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-10-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
                             </span>
                         <span class="publish-author">
                             
@@ -763,8 +784,12 @@ git commit 提交一个更改，git会把更改打包在新结点中，所以git
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Introduction-to-Algorithms/">
-                        <span class="chip bg-color">Introduction to Algorithms</span>
+                    <a href="/tags/MATLAB/">
+                        <span class="chip bg-color">MATLAB</span>
+                    </a>
+                    
+                    <a href="/tags/YOLO/">
+                        <span class="chip bg-color">YOLO</span>
                     </a>
                     
                 </div>
