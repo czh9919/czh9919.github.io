@@ -71,9 +71,6 @@ hero:
       text: 感知机.md
       link: /old-blog/感知机/感知机
     - theme: alt
-      text: 神经网络.md
-      link: /old-blog/神经网络/神经网络
-    - theme: alt
       text: 神经网络的学习.md
       link: /old-blog/神经网络的学习/神经网络的学习
     - theme: alt
