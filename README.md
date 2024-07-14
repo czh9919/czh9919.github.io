@@ -4,6 +4,8 @@
 
 本项目是个人博客
 
+[![Deploy VitePress site to Pages](https://github.com/czh9919/czh9919.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/czh9919/czh9919.github.io/actions/workflows/deploy.yml)
+
 ## 2. 技术选型
 - 前端：Vitepress
 
@@ -20,5 +22,3 @@ npm install
 npm run dev
 ```
 ##
-
-[![Deploy VitePress site to Pages](https://github.com/czh9919/czh9919.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/czh9919/czh9919.github.io/actions/workflows/deploy.yml)

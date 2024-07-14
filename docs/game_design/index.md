@@ -8,8 +8,8 @@ hero:
   tagline: My great project tagline
   actions:
     - theme: brand
-      text: SystemVerilog + UVM
-      link: /markdown-examples
-    - theme: alt
-      text: cocotb
-      link: /api-examples
+      text: Game Design intro
+      link: /game_design/game_design_intro
+
+
+

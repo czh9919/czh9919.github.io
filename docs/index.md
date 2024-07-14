@@ -8,6 +8,12 @@ hero:
   tagline: My great project tagline
   actions:
     - theme: brand
+      text: Game Design
+      link: /game-design
+    - theme: brand
+      text: uvm
+      link: /uvm
+    - theme: alt
       text: Markdown Examples
       link: /markdown-examples
     - theme: alt
