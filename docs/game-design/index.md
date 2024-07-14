@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Game Design intro
-      link: /game_design/game_design_intro
+      link: /game-design/game-design-intro
 
 
 
