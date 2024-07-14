@@ -13,9 +13,6 @@ hero:
     - theme: alt
       text: API Examples
       link: /api-examples
-    - theme: old blog
-      text: old blog
-      link: /old-blog/
 
 features:
   - title: Feature A
