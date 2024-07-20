@@ -16,6 +16,9 @@ hero:
     - theme: brand
       text: render intro
       link: /game-design/render-intro
+    - theme: brand
+      text: Sharder and Material
+      link: /game-design/sharder-and-material
 
 
 

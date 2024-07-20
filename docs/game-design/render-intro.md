@@ -75,3 +75,36 @@ This will locate the asset in the Project window and reveal its properties in th
 [Creative Commons](https://search.creativecommons.org/) 搜索引擎允许您根据 Creative Common 许可证和来源过滤搜索。此站点索引图像、音频和视频文件。
 
 [Open Game Art](https://opengameart.org/) 提供 2D 和 3D 艺术、纹理、音乐和声音效果。所有资产都是免费的;但是，有多种不同的许可证类型，因此请务必检查是否需要按资产注明创建者
+
+
+## Mesh
+
+The mesh is the 3D skeleton of your GameObject. Every GameObject in Unity has a mesh. It is the geometric element of the object.
+
+
+Shaders and materials tell Unity how you want the meshes of your 3D GameObjects to be rendered from your 3D scene to the 2D image on your screen. 
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/6644a697-d323-4cd2-af32-38aadd2c4b42_CC_Shad_Mesh_2.png)
+
+To work with meshes and understand how they are rendered, it will help to know how they are structured. Look closely at one of the apples on your workbench in Wireframe view.
+
+
+A mesh is a series of flat 2D polygons defined by vertices (singular: vertex), which are points in 3D space that are stored as XYZ coordinates.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/4018953b-4e44-43d4-a0de-a0b8f7eb30ab_CC_Shad_Mesh_3.png)
+
+If a 3D object were made only with 2D polygons, it would be faceted like a diamond or other gemstone. 3D meshes need additional information to make them appear smooth or curved in some places.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/059b0e4f-fe95-4410-9d19-d80514115ca0_CC_Shad_Mesh_4.png)
+
+Mesh data also includes normals, which are additional values that define the direction the surface is facing. When all normals are perpendicular to the edges then the shapes appear flat and faceted, like the image above. 
+
+Normals indicate the shape of a polygon; for example, that it is curved instead of flat, and exactly how it is curved. The shader renders the mesh as curved, according to the normals, without actually changing the mesh. A sphere is actually a mesh made of many flat surfaces, but its normals make the surface appear smooth.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/5bc76c0e-2b5d-433f-8b08-9832eee9044b_CC_Shad_Mesh_5.png)
+
+It’s the shader’s job to take into account all the data from the vertices and the normals to accurately represent the mesh surface.
+
+### How are meshes made?
+
+You can easily add simple primitive shapes, like cubes and spheres, into a Unity project. Anything more complex than that is created in a specialized application such as Blender®, Autodesk® 3ds Max® and Maya®, Adobe® Substance 3D Collection®, and Pixologic® ZBrush®. 
