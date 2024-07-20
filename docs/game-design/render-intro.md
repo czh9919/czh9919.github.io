@@ -42,3 +42,36 @@ To sum up: HDRP is too fancy, and the Built-In Render Pipeline isn’t quite cus
 
 ![](https://unity-connect-prd.storage.googleapis.com/20211125/learn/images/2e3f88de-9d7e-4700-a3ea-c15817eaf1ed_image18.png)
 
+# Unity Render Project
+
+Create a new Unity project using the 3D Sample Scene(URP) template. Name it something like “GuidedProjectAlienVideoGameShop” (or whichever design document you selected).
+
+Unity will open to a sample project to showcase URP’s features. Take a moment to admire the beautiful example scene that comes with the URP template.
+
+From the main menu, select Edit > Project Settings > Quality. At the center of the panel, you will see Low, Medium, and High Quality Levels and a green checkbox indicating the default quality level for each target platform.
+
+![](https://unity-connect-prd.storage.googleapis.com/20230804/learn/images/14370e7c-7ac9-4a5e-9be6-0a1c5e0405e3_image.png)
+
+Click through the Low, Medium, and High settings and notice the changes in the Scene view, focusing on the shadows, lights, and reflections on the half-painted blue wall. 
+
+
+![](https://unity-connect-prd.storage.googleapis.com/20211125/learn/images/b04aa54a-9f56-4f84-af64-ac360e392ee2_Screenshot_2021_11_25_at_16.59.59.png)
+
+When you cycle through these quality settings, you are actually changing which URP Asset is used to render the scene.  
+
+![](https://unity-connect-prd.storage.googleapis.com/20230804/learn/images/1699578a-39e7-4c69-a306-6fb164c8ef95_image.png)
+
+URP Assets control many quality settings in your project – especially related to light and shadows – and can be found in the Project window just like any other asset. 
+
+In the Quality Settings window, double-click the URP asset, which is named UniversalRP - High/Medium/LowQuality. 
+
+This will locate the asset in the Project window and reveal its properties in the Inspector. Browse through the settings available in the URP asset, specifically those related to light and shadows. Don’t worry if you don’t understand what they all mean – you’ll learn more about these settings throughout the pathway. If you want to read about these settings in advance, check out the URP asset documentation.
+
+# Free resource
+
+
+[pexels](https://www.pexels.com/) 提供免费的 2D 图像和视频。本网站上的所有资产都具有相同的许可协议：它们可以免费使用，付款和归属是可选的。
+
+[Creative Commons](https://search.creativecommons.org/) 搜索引擎允许您根据 Creative Common 许可证和来源过滤搜索。此站点索引图像、音频和视频文件。
+
+[Open Game Art](https://opengameart.org/) 提供 2D 和 3D 艺术、纹理、音乐和声音效果。所有资产都是免费的;但是，有多种不同的许可证类型，因此请务必检查是否需要按资产注明创建者
