@@ -10,6 +10,14 @@ hero:
     - theme: brand
       text: Game Design intro
       link: /game-design/game-design-intro
+    - theme: alt
+      text: Game Design documentation
+      link: /game-design/game-design-document
+    - theme: brand
+      text: render intro
+      link: /game-design/render-intro
+
+
 
 
 
