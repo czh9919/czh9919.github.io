@@ -150,7 +150,7 @@ Here is a table to compare the two:
 
 ![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/0039d601-b409-45f6-9c0d-b22a2ef0d907_CC_Shad_Light5.png)
 
-### Smoothness
+## Smoothness
 
 我愿称这玩意儿为抛光度
 
