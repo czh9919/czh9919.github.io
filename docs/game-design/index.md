@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "My blog"
+  name: "Game Design"
   text: "A VitePress Site"
   tagline: My great project tagline
   actions:
@@ -19,6 +19,9 @@ hero:
     - theme: brand
       text: Sharder and Material
       link: /game-design/sharder-and-material
+    - theme: brand
+      text: Sharder Graph
+      link: /game-design/sharder-graph
 
 
 

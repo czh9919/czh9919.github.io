@@ -168,3 +168,99 @@ In the image below, all five apples have a Metallic setting of 0.5, with increas
 
 ![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/44fb8267-f2b2-47ab-ac6c-16df97355fd1_CC_Shad_Light6.png)
 
+## transparent and translucent effects to your materials 透明度
+
+Transparency is controlled with the alpha channel of the base map (The A in RGBA). Low values make the base map color less visible and high values make it more visible. You can make a mesh entirely invisible by setting the alpha channel values to zero, or you can create translucent effects by setting the alpha values in the mid-range.
+
+### Create a glass material
+
+A perfectly clear and flat pane of glass has no diffuse reflection — all the light passes through it, and no color is reflected back to your eye. It does, however, have a specular reflection — light glints off its smooth surface. Glass in the real world is rarely perfectly clear; it has a tint and some imperfections, which create a slight diffuse reflection.
+一点点镜面反射，绝大多数光线穿过
+
+In the real world, translucent substances refract light, which means they change its direction. Refraction is an advanced shader effect that we won’t attempt here; however, we can create a translucent glass object that looks pretty convincing.  
+
+打开一个材质，locate Surface Options (at the top of the Material section) and the Surface Type property. Change this value from Opaque to Transparent. Set Render Face to Both.不然只会渲染前半部分。
+
+To adjust the alpha channel values, select the color picker for the Base Map. By default, the A channel is set to the highest value, 255, which allows no transparency. Use the slider or enter a number less than 255 to get the transparency to a level that makes the jar look like glass. (Be careful — at 0, it is totally invisible!)
+
+Give it a little Metallic, even though it isn’t a metal, to enhance the specular reflection. 
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/68176252-e714-4788-894a-dfb30dba9adb_PlantInJarGlassOnly.png)
+
+### Add detail with alpha clipping
+Consider an object like the one below. It’s a simple object that a modeling artist could create by making a leaf-shaped mesh.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/f3a6bfa6-c91f-408d-8a38-c1dc1f547752_Leaf.png)
+
+However, for an object that will be small in the scene, and might even be used thousands of times (in a tree, for instance), this leaf’s mesh would require a lot of computing power to render.
+
+Instead of modeling meshes of items like these, artists use alpha clipping in their textures to make part of a simple mesh invisible. Alpha clipping is a much more efficient way to create detailed objects — it’s easier to create and easier for the computer to process at runtime.
+
+1.  In the Project window, open the Materials folder and create a new material. Name it “Leaf”.
+2.  In the Hierarchy, expand the PlantInJar GameObject and locate the child GameObjects that have Leaf in their names. Select all of the leaves and the PlantStem.
+3.  In the Inspector, in the Mesh Renderer component, you can use the circle icon under Materials to select one material for all the selected GameObjects. Select Leaf. 
+Now, you only need to have one leaf selected in order to edit this material on all of the leaves.
+4.  Examine the plant from all angles. The leaves are visible from the top, but not from the bottom! This happens because these meshes are single-sided: there is no separate mesh on the back of the object (as there is with a cube, for example). 
+5.  In the Inspector, on your Leaf material, change the Render Face to Both to make the shader render both sides of each mesh.
+6.  In the Project window, locate the texture Plant_Albedo by searching for it. Apply this texture as the Base Map in the Leaf material. 
+The stem is now solid. Look closely at the texture and you’ll see a green stripe on the left side, which is mapped only to the PlantStem object, while the rest of the texture is mapped to the Leaf child objects. Mapping multiple objects on one texture is a technique artists use to reduce the number of files and overall file size of a project.
+Now the leaves look like printouts of leaves on paper! You can fix that with alpha clipping.
+7.  In the Inspector, examine the alpha channel of the Plant_Albedo texture. It is a cutout of the leaf. We’ll use this alpha channel to “cut out” the leaf in this material. 
+8.  In Scene view, select the Leaf material and locate the Surface Options section at the top of  the Material Inspector, and enable Alpha Clipping.
+9.  A Threshold slider appears. While examining a leaf closely, move this slider. At some threshold value, the “paper” around the leaves will disappear. 
+10.  Adjust this value so that the edges of the leaves look right. If the Threshold is too low, then pixels at lower alpha channel values will be visible, and the white edge will appear. If it is too high, then some of the higher alpha channel values will be invisible, cutting off the edges too close and causing some holes.  
+
+This piece is complete. It should look like the image below.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/f63ac1f4-9373-4e03-bd19-e65c0ad10b4d_PlantInJar.png)
+
+## Add physical texture with bump mapping
+
+In addition to the properties we have covered so far, materials for physically based shaders allow you to add the illusion of physical texture to a simple mesh without complicating it with lots of detailed polygons. The process of using textures to add this detail is called bump mapping. This process is much more efficient than modelling small details on a mesh.
+
+Consider the difference between a low-poly mesh (a mesh with fewer polygons) and a high-poly mesh. It takes more computing power to render a high-poly mesh because more polygons mean there is more data to process. 
+
+But with bump mapping, you can tell the shader to add the appearance of surface detail to your mesh without actually adding polygons. This technique is better for performance, and the results can be pretty convincing!
+
+[bump maps docs](https://docs.unity3d.com/Manual/StandardShaderMaterialParameterNormalMap.html)
+
+There are two types of maps primarily used in bump mapping: normal maps and height maps.
+
+As you will recall, normals are values in the mesh data that define the direction each vertex is facing. A normal map sets these values over an entire surface, which directs the shader to create the illusion that fragments (pixels) on the surface are facing different directions.
+
+Height maps indicate the relative height of each pixel from the mesh.
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/1a10eda3-f94b-463c-a9ce-1e44c1226691_Copy_of_CC_Shad_Mesh_5.png)
+
+Normal and height maps can add realistic physical details to your surfaces without using much computing power. Frequently, normal maps are used without height maps.
+
+Like base maps and specular/metallic maps, normal maps are created in 3D modeling or painting software. You can even download tileable normal maps from the Unity Asset Store! 
+
+A normal map is similar to a base map, except that the red, green, and blue values indicate the direction of the normal relative to the mesh surface. Normal maps are mostly cyan and purple because the directions are expressed using higher values in the blue channel.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/5d4b3249-c40a-42dd-9232-5a66e331e9b6_CC_Shad_Bump_1.png)
+
+Height maps indicate the relative height of each pixel from the mesh. These are single-channel (grayscale) maps in which each pixel value indicates a relative distance from the mesh surface. When you use an RGB image as a height map, the shader only reads the green channel.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211122/learn/images/879c1634-f637-4799-9db3-c157caf826c6_HeightMap_Pavement_TinyMoss_height.png)
+
+Height maps are not used as commonly as normal maps. They are useful for creating a dramatic effect, but they also stretch the base map, which is not usually desirable if the base map is not a solid color. 
+
+
+
+## Occlusion Map
+
+Occlusion, in 3D graphics, is the blockage of light by an object. A crack in a sidewalk and the thin dark shadow line between the fingers of a closed fist are examples of occlusion.
+Even in PBR, ambient light can reflect in odd ways where it should be occluded. An occlusion map adds shadows to these occluded areas.
+Occlusion maps are produced along with most models in 3D modeling software. The effects are sometimes subtle, but they make the light on surfaces more realistic and can enhance detailed shadows in ways that base maps and bump mapping can’t.
+
+
+## microsurface mapping
+
+Look very closely at a real-world object that has a smooth surface, such as the glass on your smartphone, covered with fingerprints, or your favorite coffee cup that has become scratched and worn. If you wanted to model these items and include details like the fingerprints or scratches, you can use microsurface mapping to add a level of detail that isn’t otherwise captured in your base map or normal map.
+
+There are two additional textures in the Detail Inputs section of the URP/Lit Shader materials:
+- A Detail Inputs Base Map can add detailed color, such as threads in fabric. 
+- The Mask is an alpha channel map that shields specified areas from the Base Map and Normal Map microsurface maps.
+
+![](https://unity-connect-prd.storage.googleapis.com/20211123/learn/images/f4a34651-9aeb-4c68-a300-2b5167f848f8_CC_Shad_Ref_2.png)
+
