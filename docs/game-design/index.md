@@ -22,6 +22,9 @@ hero:
     - theme: brand
       text: Sharder Graph
       link: /game-design/sharder-graph
+    - theme: alt
+      text: Lighting
+      link: /game-design/lighting-get-started
 
 
 

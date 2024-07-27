@@ -22,3 +22,22 @@ The goal of this tutorial is to create a custom shader with a glowing, transpare
 The basic shimmer is made with a procedural noise map. Procedural means that the texture is created by some formula or algorithm, not from an image or other physical source. Shader Graph provides a few procedural noise maps to choose from. Each one generates a cloud-like map with lighter and darker areas in a seemingly random pattern.
 
 这个part感觉看文档更好，图形化编程感觉有点脱裤子放屁
+
+习题
+
+What is a mesh? 
+The geometric data of a GameObject, consisting of vertices and normals.
+
+The URP/Lit Shader calls for a Base Map to specify color. Other shaders commonly call this property Albedo or Diffuse Map (even though, technically, these terms don’t mean exactly the same thing).
+
+Lit shaders respond to the light in the scene, and unlit shaders don’t. Unlit shaders are useful for certain artistic effects or for optimized projects that run more efficiently by not using lighting.
+
+PBR simulates the real-world principles of physics and light to generate realistic shadows, reflections, ambient light, and other effects of light on 3D surfaces.
+
+法线是网格数据中的值，用于定义每个顶点所面向的方向。法线贴图在整个表面上设置这些值。高度贴图表示每个像素与网格的相对高度。
+Normals are values in the mesh data that define the direction each vertex is facing. A normal map sets these values over an entire surface. Height maps indicate the relative height of each pixel from the mesh.
+
+
+The mesh is the 3D skeleton of your GameObject. It consists of vertices that define polygons, and normals that specify the directions vertices face. Every GameObject in Unity has a mesh. It is the geometric element of the object.
+
+When a material is built for a shader of a different render pipeline than the current project, it is bright magenta (pink) to alert you.
